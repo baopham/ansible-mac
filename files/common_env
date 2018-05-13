@@ -1,0 +1,41 @@
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export SHELL=/usr/local/bin/zsh
+
+# NVM
+export NVM_DIR=~/.nvm
+. "/usr/local/opt/nvm/nvm.sh"
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# RBENV
+[[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
+
+# Go
+export GOPATH=$HOME/Projects/Go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+# AWS
+export AWS_CREDENTIAL_FILE=$HOME/.aws/cfn-credentials
+
+# Composer
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$HOME/.composer/vendor/bin:$PATH"
+
+# Yarn
+export PATH="$PATH:$HOME/.yarn/bin"
+
+# React Native - Android
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# Local bin
+export PATH=$PATH:$HOME/.bin
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"

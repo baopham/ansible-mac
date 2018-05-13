@@ -1,0 +1,25 @@
+- hosts: all
+  vars:
+    - osxc_path: "/Users/{{ ansible_user_id }}/osxc"
+
+  vars_prompt:
+    - name: "deploy_prezto"
+      prompt: "Deploy Prezto?"
+      default: "yes"
+    - name: "deploy_vim"
+      prompt: "Deploy Vim?"
+      default: "yes"
+    - name: "deploy_osxc"
+      prompt: "Deploy osxc/starter?"
+      default: "yes"
+
+  tasks:
+  - name: Deploy Prezto
+    shell: cd /Users/{{ ansible_user_id }}/.zprezto; git add .; git ci -m 'Deploy'; git push origin master
+    when: deploy_prezto == 'yes'
+  - name: Deploy Vim
+    shell: cd /Users/{{ ansible_user_id }}/.vim; git add .; git ci -m 'Deploy'; git push origin master
+    when: deploy_vim == 'yes'
+  - name: Deploy osxc/starter
+    shell: cd {{ osxc_path }}; git add .; git ci -m 'Deploy'; git push origin master
+    when: deploy_osxc == 'yes'

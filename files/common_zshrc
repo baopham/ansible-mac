@@ -1,0 +1,9 @@
+# AWS CLI
+test -e /usr/local/share/zsh/site-functions/_aws && source /usr/local/share/zsh/site-functions/_aws
+
+test -e ${HOME}/.bin/tmuxinator.zsh && source ${HOME}/.bin/tmuxinator.zsh
+
+# github.com/baopham/snip
+test -e ${HOME}/.bin/snip_zsh_autocomplete && source ${HOME}/.bin/snip_zsh_autocomplete
+
+eval "$(direnv hook $SHELL)"

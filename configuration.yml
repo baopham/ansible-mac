@@ -1,0 +1,103 @@
+---
+- hosts: all
+  vars:
+    - osxc_path: "/Users/{{ ansible_user_id }}/osxc"
+
+  vars_prompt:
+    - name: "from_scratch"
+      prompt: "From scratch?"
+      default: "no"
+    - name: "update_vim_bundles"
+      prompt: "Update Vim bundles?"
+      default: "no"
+
+  tasks:
+  - name: Turn off character accent menu
+    shell:  defaults write -g ApplePressAndHoldEnabled -bool false
+
+  - name: Symlink dotfiles
+    file: src={{ osxc_path }}/files/{{ item }} dest=/Users/{{ ansible_user_id }}/.{{ item }} force=yes state=link
+    with_items:
+      - gitignore_global
+      - gitconfig
+      - tmux.conf
+      - common_env
+      - common_zshrc
+      - ansible.cfg
+
+  - name: Set up ansible hosts file
+    copy: src=files/ansible_hosts dest=/Users/{{ ansible_user_id }}/.ansible/hosts force=no
+
+  - name: Set up Prezto
+    git: repo=ssh://git@github.com/baopham/prezto.git recursive=yes dest=/Users/{{ ansible_user_id }}/.zprezto update=yes force=yes
+
+  - name: Symlink Prezto files
+    file: src=/Users/{{ ansible_user_id }}/.zprezto/runcoms/{{ item }} dest=/Users/{{ ansible_user_id }}/.{{ item }} state=link
+    with_items:
+      - zlogin
+      - zlogout
+      - zpreztorc
+      - zprofile
+      - zshenv
+      - zshrc
+
+  - name: Source common ENV
+    lineinfile: dest=/Users/{{ ansible_user_id }}/.zprofile line="source ~/.common_env"
+
+  - name: Source common zshrc
+    lineinfile: dest=/Users/{{ ansible_user_id }}/.zshrc line="source ~/.common_zshrc"
+
+  - name: Remove ~/.vim
+    file: path=/Users/{{ ansible_user_id }}/.vim state=absent
+    when: from_scratch == "yes"
+
+  - name: Remove ~/.vimrc
+    file: path=/Users/{{ ansible_user_id }}/.vimrc state=absent
+    when: from_scratch == "yes"
+
+  - name: Install Vim
+    git: repo=ssh://git@github.com/baopham/vim.git dest=/Users/{{ ansible_user_id }}/.vim update=yes force=yes
+
+  - name: Symlink vimrc
+    file: src=/Users/{{ ansible_user_id }}/.vim/vimrc dest=/Users/{{ ansible_user_id }}/.vimrc state=link
+
+  - name: Create cache directory
+    file: path=/Users/{{ ansible_user_id }}/.cache/vim/undo state=directory
+
+  - name: Set up nvm
+    file: path=/Users/{{ ansible_user_id }}/.nvm state=directory
+
+  - name: Install node
+    shell: zsh; . /Users/{{ ansible_user_id }}/.zprofile; nvm install 7.6; nvm alias default 7.6
+
+  - name: Download Monaco-for-Powerline font
+    get_url: url=https://gist.github.com/baopham/1838072/raw/2c0e00770826e651d1e355962e751325edb0f1ee/Monaco%20for%20Powerline.otf dest=/tmp/monaco-for-powerline.otf force=yes
+    when: from_scratch == 'yes'
+
+  - name: Open Monaco-for-Powerline font
+    shell: open /tmp/monaco-for-powerline.otf
+    when: from_scratch == 'yes'
+
+  - name: Download iTerm2 Snazzy color preset
+    get_url: url=https://github.com/sindresorhus/iterm2-snazzy/raw/master/Snazzy.itermcolors dest=/tmp/Snazzy.itermcolors force=yes
+    when: from_scratch == 'yes'
+
+  - name: Open iTerm2 Snazzy color preset
+    shell: open /tmp/Snazzy.itermcolors
+    when: from_scratch == 'yes'
+
+  - name: Install Ruby
+    shell: source "$HOME/.rvm/scripts/rvm"; rvm install 2.4.1; rvm use 2.4.1 --default
+
+  # This fails on the first run... maybe just stop here and open a new tab and run again...
+  - name: Install tmuxinator
+    shell: source "$HOME/.rvm/scripts/rvm"; rvm use 2.4.1; gem install tmuxinator
+
+  - name: Create ~/.bin
+    file: path=/Users/{{ ansible_user_id }}/.bin state=directory
+
+  - name: Setup tmuxinator
+    get_url:
+      url: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
+      dest: "/Users/{{ ansible_user_id }}/.bin"
+

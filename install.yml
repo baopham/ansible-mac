@@ -1,0 +1,60 @@
+---
+# Here we describe every software we may want to install
+- hosts: all
+  vars_prompt:
+    - name: "from_scratch"
+      prompt: "From scratch?"
+      default: "no"
+    - name: "update_homebrew"
+      prompt: "Update Homebrew?"
+      default: "no"
+
+  tasks:
+  - name: brew tap caskroom/versions
+    shell: brew tap caskroom/versions
+    when: from_scratch == 'yes'
+
+  - name: brew tap beeftornado/rmtree
+    shell: brew tap beeftornado/rmtree
+    when: from_scratch == 'yes'
+
+  - name: Install brew packages
+    homebrew: name={{ item }} state=latest update_homebrew={{ update_homebrew }}
+    with_items:
+      - git
+      - zsh
+      - reattach-to-user-namespace
+      - tmux
+      - nvm
+      - cmake
+      - jenv
+      - fasd
+      - ansible
+      - fortune
+      - go
+      - ag
+      - yarn
+      - lua
+      - direnv
+    when: from_scratch == 'yes' or update_homebrew == 'yes'
+
+  - name: Install brew cask packages
+    shell: brew cask install {{ item }}
+    with_items:
+      - shiftit
+      - virtualbox
+      - vagrant
+    when: from_scratch == 'yes' or update_homebrew == 'yes'
+
+- hosts: all
+  vars_prompt:
+    - name: "from_scratch"
+      prompt: "From scratch?"
+      default: "no"
+    - name: "update_homebrew"
+      prompt: "Update Homebrew?"
+      default: "no"
+  tasks:
+  - name: Install rvm
+    shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3; \curl -sSL https://get.rvm.io | bash -s stable --autolibs=enabled
+    when: from_scratch == 'yes'

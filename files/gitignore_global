@@ -1,0 +1,111 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+# *.jar
+*.rar
+*.tar
+*.zip
+
+# Logs               #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+!icons
+Thumbs.db
+
+# Octave core file #
+######################
+.octave-core
+octave-core
+
+# ctags tags file #
+###################
+.tags
+tags
+!tags/
+
+# Syntastic Javac Config #
+##########################
+.syntastic_javac_config
+
+# Latex #
+#########
+TSWLatexianTemp*
+
+# PHPStorm #
+############
+.idea
+
+# Ruby #
+########
+#Gemfile.lock
+
+# SASS #
+########
+.sass-cache
+
+# PHPComplete-Extended #
+########################
+.phpcomplete_extended
+
+# Eclim #
+#########
+.buildpath
+.project
+workbench.xmi
+
+# jenv #
+########
+.java-version
+
+# JavaScript #
+##############
+.tern-project
+
+# Ag #
+######
+.agignore
+.ignore
+
+# Local vimrc #
+###############
+.lvimrc
+
+# Supervisord #
+###############
+*.pid
+
+# flake8 #
+##########
+.flake8
+
+# direnv #
+##########
+.envrc
+
+# virtualenv #
+##############
+virtualenv
+
+# python rope #
+###############
+.ropeproject
