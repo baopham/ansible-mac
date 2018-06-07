@@ -1,0 +1,12 @@
+2gua.rainbow-brackets
+EditorConfig.EditorConfig
+benfahrenheit.vscode-surround
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+donjayamanne.githistory
+eg2.tslint
+kumar-harsh.graphql-for-vscode
+ms-python.python
+vscodevim.vim
+waderyan.gitblame
+zhuangtongfa.Material-theme

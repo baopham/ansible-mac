@@ -1,0 +1,29 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    }
+]
