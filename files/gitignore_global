@@ -109,3 +109,7 @@ virtualenv
 # python rope #
 ###############
 .ropeproject
+
+# vscode #
+###############
+.vscode
