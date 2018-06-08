@@ -27,7 +27,7 @@
 
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "One Dark Pro",
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
 
 
@@ -41,5 +41,13 @@
 
     "terminal.external.osxExec": "iTerm.app",
 
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+
+    "python.linting.pylintEnabled": false,
+
+    "python.linting.flake8Enabled": true
 }
