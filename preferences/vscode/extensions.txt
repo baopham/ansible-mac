@@ -1,6 +1,7 @@
 2gua.rainbow-brackets
 EditorConfig.EditorConfig
 benfahrenheit.vscode-surround
+bmewburn.vscode-intelephense-client
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 donjayamanne.githistory
