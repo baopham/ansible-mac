@@ -24,6 +24,8 @@
             ]
         }
     ],
+    "vim.easymotionMarkerFontFamily": "Monaco",
+    "vim.easymotionMarkerFontSize": "12",
 
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "One Dark Pro",
@@ -49,5 +51,8 @@
 
     "python.linting.pylintEnabled": false,
 
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "editor.multiCursorModifier": "alt",
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true
 }
