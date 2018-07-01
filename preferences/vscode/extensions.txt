@@ -6,8 +6,12 @@ christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 donjayamanne.githistory
 eg2.tslint
+ikappas.phpcs
 kumar-harsh.graphql-for-vscode
+MehediDracula.php-namespace-resolver
 ms-python.python
+ms-vscode.Go
+neilbrayfield.php-docblocker
 vscodevim.vim
 waderyan.gitblame
 zhuangtongfa.Material-theme
