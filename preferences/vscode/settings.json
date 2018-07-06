@@ -14,10 +14,34 @@
             ]
         },
         {
-            "before":["gd"],
+            "before": ["<c-h>"],
             "commands": [
                 {
-                    "command": "editor.action.goToTypeDefinition"
+                    "command": "workbench.action.focusLeftGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-l>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusRightGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-j>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusBelowGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-k>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusAboveGroup"
                 }
             ]
         }
@@ -27,9 +51,7 @@
 
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "One Dark Pro",
-    "editor.minimap.enabled": false,
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
-
 
     "[javascript]": {
       "editor.tabSize": 2
@@ -48,9 +70,5 @@
     },
 
     "python.linting.pylintEnabled": false,
-
     "python.linting.flake8Enabled": true,
-    "editor.multiCursorModifier": "alt",
-    "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": true
 }
