@@ -1,0 +1,6 @@
+vim-mode-plus
+vim-mode-plus-keymaps-for-surround
+zentabs
+cursor-history
+jumpy
+nuclide

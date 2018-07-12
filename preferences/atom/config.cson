@@ -1,0 +1,11 @@
+  jumpy: {}
+  nuclide:
+    "atom-ide-diagnostics-ui": {}
+    "atom-ide-terminal":
+      allowTransparency: true
+    installRecommendedPackages: true
+  "vim-mode-plus":
+    clearMultipleCursorsOnEscapeInsertMode: true
+    keymapYToYankToLastCharacterOfLine: true
+  welcome:
+    showOnStartup: false
