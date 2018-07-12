@@ -1,25 +1,47 @@
 {
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
     "vim.easymotion": true,
     "vim.visualstar": true,
     "vim.hlsearch": true,
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["<space>"],
-            "after":[],
             "commands": [
                 {
-                    "command": ":nohl",
-                    "args": []
+                    "command": ":nohl"
                 }
             ]
         },
         {
-            "before":["gd"],
-            "after":[],
+            "before": ["<c-h>"],
             "commands": [
                 {
-                    "command": "editor.action.goToTypeDefinition",
-                    "args": []
+                    "command": "workbench.action.focusLeftGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-l>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusRightGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-j>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusBelowGroup"
+                }
+            ]
+        },
+        {
+            "before": ["<c-k>"],
+            "commands": [
+                {
+                    "command": "workbench.action.focusAboveGroup"
                 }
             ]
         }
@@ -29,9 +51,7 @@
 
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "One Dark Pro",
-    "editor.minimap.enabled": true,
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
-
 
     "[javascript]": {
       "editor.tabSize": 2
@@ -50,9 +70,5 @@
     },
 
     "python.linting.pylintEnabled": false,
-
     "python.linting.flake8Enabled": true,
-    "editor.multiCursorModifier": "alt",
-    "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": true
 }
