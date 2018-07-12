@@ -24,7 +24,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 export AWS_CREDENTIAL_FILE=$HOME/.aws/cfn-credentials
 
 # Composer
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Yarn
 export PATH="$PATH:$HOME/.yarn/bin"
