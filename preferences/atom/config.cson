@@ -1,11 +1,21 @@
-  jumpy: {}
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    useCoreMovementCommands: false
+  "autocomplete-python":
+    useKite: false
+  "language-babel":
+    autoIndentJSX: true
   nuclide:
     "atom-ide-diagnostics-ui": {}
     "atom-ide-terminal":
       allowTransparency: true
     installRecommendedPackages: true
+    "nuclide-working-sets": {}
+    use:
+      hyperclick: "always"
   "vim-mode-plus":
     clearMultipleCursorsOnEscapeInsertMode: true
-    keymapYToYankToLastCharacterOfLine: true
+    useClipboardAsDefaultRegister: false
   welcome:
     showOnStartup: false

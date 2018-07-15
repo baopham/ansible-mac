@@ -35,7 +35,7 @@
   'shift-tab': 'autocomplete-plus:move-up'
 
 'atom-text-editor:not(.mini).vim-mode-plus:not(.insert-mode):not(.jumpy-jump-mode), .tree-view':
-  ', e': 'jumpy:toggle'
+  ', w': 'jumpy:toggle'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-h': 'window:focus-pane-on-left'
@@ -49,3 +49,4 @@
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
   'ctrl-\\': 'tree-view:toggle'
+  '\\ t': 'outline-view:toggle'
