@@ -49,4 +49,6 @@
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
   'ctrl-\\': 'tree-view:toggle'
-  '\\ t': 'outline-view:toggle'
+
+'atom-text-editor.vim-mode-plus-input-char-waiting':
+  '\\': 'unset!'
