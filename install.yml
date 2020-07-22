@@ -10,8 +10,8 @@
       default: "no"
 
   tasks:
-  - name: brew tap caskroom/versions
-    shell: brew tap caskroom/versions
+  - name: brew tap homebrew/cask-versions
+    shell: brew tap homebrew/cask-versions
     when: from_scratch == 'yes'
 
   - name: brew tap beeftornado/rmtree
